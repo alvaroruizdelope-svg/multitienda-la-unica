@@ -43,6 +43,7 @@
 			<p class="empty-state"><?php esc_html_e( 'Las categorías aparecerán cuando haya productos publicados en ellas.', 'multitienda-la-unica' ); ?></p>
 		<?php endif; ?>
 	</section>
+	<?php get_template_part( 'template-parts/shop-origins' ); ?>
 	<section id="ofertas" class="home-section" aria-labelledby="offers-heading">
 		<h2 id="offers-heading"><?php esc_html_e( 'Ofertas destacadas', 'multitienda-la-unica' ); ?></h2>
 		<?php la_unica_home_products( 'sale_products', array(), __( 'En este momento no hay ofertas activas.', 'multitienda-la-unica' ) ); ?>

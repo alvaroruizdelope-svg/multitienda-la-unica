@@ -28,3 +28,26 @@ Tema de WordPress para la tienda de Multitienda La Única, desarrollado por AV C
 ## Actualizaciones
 
 Descarga la versión nueva y reemplaza la carpeta del tema por la del ZIP. Guarda primero una copia de la carpeta instalada, en especial del PNG original si lo añadiste localmente. Reactiva el tema si WordPress lo solicita y repite las comprobaciones. Los productos y pedidos siguen en tu instalación de WordPress.
+
+## Demostración de la fase 2
+
+La carpeta `demo/` contiene el CSV y seis ilustraciones originales en formato JPG. La lata de cola lleva un diseño genérico. Los artículos se identifican con **[DEMO]** en el nombre y usan SKU que empiezan por `LUNICA-DEMO-`. Las imágenes, precios y existencias son de prueba.
+
+Haz la importación en tu WordPress local. El CSV deja los productos publicados y visibles en esa instalación para poder enseñar el catálogo, las ofertas y los destacados.
+
+### Configurar el atributo Origen
+
+1. Abre **Productos → Atributos**. Crea el atributo **Origen**, con slug `origen`, y marca **¿Activar archivos?**. Si ya existe con ese slug, edítalo o reutilízalo.
+2. Pulsa **Configurar términos** y añade **España** con slug `espana` y **Colombia** con slug `colombia`. Reutiliza los términos si ya existen. Conserva los slugs para que la portada pueda encontrarlos.
+3. El atributo representa una clasificación comercial del catálogo. No certifica el país de fabricación. Para cambiar la clasificación de un artículo, edita sus atributos en la ficha de producto.
+4. La sección **Compra por origen** aparece en la portada cuando existe alguno de los términos. Con los archivos activos, las tarjetas llevan a los archivos de productos de cada término. Si un archivo devuelve un 404 tras activar la opción, guarda de nuevo **Ajustes → Enlaces permanentes**. También puedes usar el atributo en el bloque nativo **Filtro por atributo** si tu plantilla de catálogo admite bloques.
+
+### Importar los seis productos
+
+1. En el escritorio, entra en **Medios → Añadir nuevo archivo** y sube los seis JPG de `demo/images/`. Conserva los nombres de archivo originales. Si ya los subiste, reutiliza los existentes para que WordPress no añada sufijos como `-1`.
+2. Ve a **Productos → Todos los productos → Importar** y selecciona `demo/productos-demostracion.csv`. Deja desmarcada la casilla **Actualizar productos existentes**. El importador omite los SKU que ya existen.
+3. Pulsa **Continuar** y comprueba que WooCommerce ha asignado las columnas. Verifica **Images** y los cuatro campos **Attribute 1**, en especial **Attribute 1 global**. El CSV usa comas y está en UTF-8.
+4. Ejecuta el importador. En una primera importación, comprueba que se han creado seis productos. En **Productos**, busca `LUNICA-DEMO-` y abre una ficha para revisar foto, precio, stock, categoría y atributo **Origen**.
+5. En la portada, entra en **Productos españoles** y **Productos colombianos**. De los artículos de prueba, cada grupo debe contener tres. Revisa también **Compra por categorías**, **Ofertas destacadas** y **Productos destacados**.
+
+La carpeta que se copia a `themes/` sigue siendo solo `multitienda-la-unica/`. Conserva `demo/` en la carpeta descomprimida para subir los archivos desde el escritorio de WordPress.
