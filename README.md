@@ -13,7 +13,7 @@ Tema de WordPress para la tienda de Multitienda La Única, desarrollado por AV C
 
 1. Abre el repositorio en GitHub y selecciona **Code → Download ZIP**. Descomprime el archivo. Si los cambios se entregan mediante una pull request, fusiónala en `main` antes de descargar.
 2. Copia la carpeta interior `multitienda-la-unica`, la que contiene `style.css`, en `C:\xampp\htdocs\wordpress-la-unica\wp-content\themes\`. Comprueba que `style.css` quede directamente dentro de `themes\multitienda-la-unica\`.
-3. Copia el logotipo PNG original a `multitienda-la-unica/assets/images/logo-la-unica.png` dentro del tema. Si el archivo falta, la cabecera conserva el enlace «Inicio» y el espacio del logo queda pendiente.
+3. El ZIP incluye el logotipo original en `multitienda-la-unica/assets/images/logo-la-unica.png`. Al copiar la carpeta completa del tema, la cabecera lo carga automáticamente.
 4. Arranca Apache y MariaDB desde XAMPP. Abre el escritorio del WordPress existente, entra en **Apariencia → Temas** y activa **Multitienda La Única**.
 5. Comprueba en **Plugins** que WooCommerce esté activo y que sus páginas de tienda, carrito, finalizar compra y mi cuenta estén asignadas. En **Ajustes → Generales**, selecciona **Español** como idioma del sitio.
 6. El menú principal funciona al activar el tema. Para personalizarlo, asigna un menú a la ubicación **Menú principal** en **Apariencia → Menús**. Cuando estén listas las páginas de contacto y políticas, añade sus enlaces al **Menú de información y políticas**.
@@ -27,13 +27,13 @@ Tema de WordPress para la tienda de Multitienda La Única, desarrollado por AV C
 
 ## Actualizaciones
 
-Descarga la versión nueva y reemplaza la carpeta del tema por la del ZIP. Guarda primero una copia de la carpeta instalada, en especial del PNG original si lo añadiste localmente. Reactiva el tema si WordPress lo solicita y repite las comprobaciones. Los productos y pedidos siguen en tu instalación de WordPress.
+Descarga la versión nueva y reemplaza la carpeta del tema por la del ZIP. Guarda primero una copia de la carpeta instalada. Reactiva el tema si WordPress lo solicita y repite las comprobaciones. Los productos y pedidos siguen en tu instalación de WordPress.
 
 ## Demostración de la fase 2
 
 La carpeta `demo/` contiene el CSV y seis ilustraciones originales en formato JPG. La lata de cola lleva un diseño genérico. Los artículos se identifican con **[DEMO]** en el nombre y usan SKU que empiezan por `LUNICA-DEMO-`. Las imágenes, precios y existencias son de prueba.
 
-Haz la importación en tu WordPress local. El CSV deja los productos publicados y visibles en esa instalación para poder enseñar el catálogo, las ofertas y los destacados.
+Arranca Apache y MariaDB en XAMPP y entra en el escritorio de tu WordPress local (`http://localhost/wordpress-la-unica/wp-admin/`). Configura el atributo **Origen** y sube las imágenes a la biblioteca de medios antes de importar el CSV. El CSV deja los productos publicados y visibles en esa instalación para poder enseñar el catálogo, las ofertas y los destacados.
 
 ### Configurar el atributo Origen
 
@@ -44,7 +44,7 @@ Haz la importación en tu WordPress local. El CSV deja los productos publicados 
 
 ### Importar los seis productos
 
-1. En el escritorio, entra en **Medios → Añadir nuevo archivo** y sube los seis JPG de `demo/images/`. Conserva los nombres de archivo originales. Si ya los subiste, reutiliza los existentes para que WordPress no añada sufijos como `-1`.
+1. En el escritorio, entra en **Medios → Añadir nuevo archivo** y sube los seis JPG de `demo/images/`. Conserva los nombres de archivo originales. El CSV enlaza las imágenes por nombre en la biblioteca de medios. Si ya las subiste, reutilízalas para evitar sufijos como `-1`. No incluyas el logotipo en esta subida.
 2. Ve a **Productos → Todos los productos → Importar** y selecciona `demo/productos-demostracion.csv`. Deja desmarcada la casilla **Actualizar productos existentes**. El importador omite los SKU que ya existen.
 3. Pulsa **Continuar** y comprueba que WooCommerce ha asignado las columnas. Verifica **Images** y los cuatro campos **Attribute 1**, en especial **Attribute 1 global**. El CSV usa comas y está en UTF-8.
 4. Ejecuta el importador. En una primera importación, comprueba que se han creado seis productos. En **Productos**, busca `LUNICA-DEMO-` y abre una ficha para revisar foto, precio, stock, categoría y atributo **Origen**.
