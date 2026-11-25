@@ -168,3 +168,7 @@ function la_unica_home_products( $type, $attributes, $empty_message ) {
 	echo $products->get_content(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	remove_action( $empty_hook, $show_empty );
 }
+
+if ( is_admin() ) {
+	require_once get_theme_file_path( '/inc/demo-importer.php' );
+}
